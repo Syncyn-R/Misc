@@ -1,0 +1,25 @@
+start(){
+su -c 'screen -wipe' ubuntu
+chmod 777 /dev/kvm
+for services in `cat /etc/servicesd`
+do
+    service $services start
+done
+}
+
+stop(){
+for services in `tac /etc/servicesd`
+do
+    service $services stop
+done
+#rm -rf /run/* /tmp/*
+#mkdir /run/dbus
+#mkdir /run/lock
+#chmod -R 777 /run
+#chmod -R 777 /tmp
+}
+
+case "$1" in
+start) start;;
+stop) stop;;
+esac
