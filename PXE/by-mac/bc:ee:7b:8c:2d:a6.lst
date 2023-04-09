@@ -1,2 +1,0 @@
-#!ipxe
-chain --autofree /by-name/Main_2.lst

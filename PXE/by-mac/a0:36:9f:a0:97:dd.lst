@@ -1,2 +1,0 @@
-#!ipxe
-chain /by-name/Server-X58-Hi.lst
