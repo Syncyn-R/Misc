@@ -1,0 +1,141 @@
+QEMU 6.2.0 monitor - type 'help' for more information
+(qemu) i[K[Din[K[D[Dinf[K[D[D[Dinfo[K[D[D[D[Dinfo [K[D[D[D[D[Dinfo c[K[D[D[D[D[D[Dinfo cp[K[D[D[D[D[D[D[Dinfo cpu[K[D[D[D[D[D[D[D[Dinfo cpus[K
+* CPU #0: thread_id=62304
+  CPU #1: thread_id=62305
+  CPU #2: thread_id=62306
+  CPU #3: thread_id=62308
+  CPU #4: thread_id=62309
+  CPU #5: thread_id=62310
+  CPU #6: thread_id=62312
+  CPU #7: thread_id=62313
+(qemu) a[K[Daa[K[D[Daaa[K[D[D
+unknown command: 'aaa'
+(qemu) a[K[Dba[K[D[Daba[K[D[D
+unknown command: 'aba'
+(qemu) 
+(qemu) 
+(qemu) d[K[Dda[K
+unknown command: 'da'
+(qemu) d[K
+unknown command: 'd'
+(qemu) w[K[Dwd[K
+unknown command: 'wd'
+(qemu) s[K[Dsa[K
+unknown command: 'sa'
+(qemu) 
+(qemu) i[K[Din[K[D[Dinf[K[D[D[Dinfo[K[D[D[D[Dinfo [K
+balloon               block                 block-jobs            
+blockstats            capture               chardev               
+cpus                  dirty_rate            dump                  
+history               hotpluggable-cpus     iothreads             
+irq                   jit                   kvm                   
+lapic                 mem                   memdev                
+memory-devices        memory_size_summary   mice                  
+migrate               migrate_capabilities  migrate_parameters    
+mtree                 name                  network               
+numa                  opcount               pci                   
+pic                   profile               qdm                   
+qom-tree              qtree                 ramblock              
+rdma                  registers             replay                
+rocker                rocker-of-dpa-flows   rocker-of-dpa-groups  
+rocker-ports          roms                  sev                   
+sgx                   snapshots             spice                 
+status                sync-profile          tlb                   
+tpm                   trace-events          usb                   
+usbhost               usernet               uuid                  
+version               vm-generation-id      vnc                   
+(qemu) info [K
+balloon               block                 block-jobs            
+blockstats            capture               chardev               
+cpus                  dirty_rate            dump                  
+history               hotpluggable-cpus     iothreads             
+irq                   jit                   kvm                   
+lapic                 mem                   memdev                
+memory-devices        memory_size_summary   mice                  
+migrate               migrate_capabilities  migrate_parameters    
+mtree                 name                  network               
+numa                  opcount               pci                   
+pic                   profile               qdm                   
+qom-tree              qtree                 ramblock              
+rdma                  registers             replay                
+rocker                rocker-of-dpa-flows   rocker-of-dpa-groups  
+rocker-ports          roms                  sev                   
+sgx                   snapshots             spice                 
+status                sync-profile          tlb                   
+tpm                   trace-events          usb                   
+usbhost               usernet               uuid                  
+version               vm-generation-id      vnc                   
+(qemu) info [K
+info balloon  -- show balloon information
+info block [-n] [-v] [device] -- show info of one block device or all block devices (-n: show named nodes; -v: show details)
+info block-jobs  -- show progress of ongoing block device operations
+info blockstats  -- show block device statistics
+info capture  -- show capture information
+info chardev  -- show the character devices
+info cpus  -- show infos for each CPU
+info dirty_rate  -- show dirty rate information
+info dump  -- Display the latest dump status
+info history  -- show the command line history
+info hotpluggable-cpus  -- Show information about hotpluggable CPUs
+info iothreads  -- show iothreads
+info irq  -- show the interrupts statistics (if available)
+info jit  -- show dynamic compiler info
+info kvm  -- show KVM information
+info lapic [apic-id] -- show local apic state (apic-id: local apic to read, default is which of current CPU)
+info mem  -- show the active virtual memory mappings
+info memdev  -- show memory backends
+info memory-devices  -- show memory devices
+info memory_size_summary  -- show the amount of initially allocated and present hotpluggable (if enabled) memory in bytes.
+info mice  -- show which guest mouse is receiving events
+info migrate  -- show migration status
+info migrate_capabilities  -- show current migration capabilities
+info migrate_parameters  -- show current migration parameters
+info mtree [-f][-d][-o][-D] -- show memory tree (-f: dump flat view for address spaces;-d: dump dispatch tree, valid with -f only);-o: dump region owners/parents;-D: dump disabled regions
+info name  -- show the current VM name
+info network  -- show the network state
+info numa  -- show NUMA information
+info opcount  -- show dynamic compiler opcode counters
+info pci  -- show PCI info
+info pic  -- show PIC state
+info profile  -- show profiling information
+info qdm  -- show qdev device model list
+info qom-tree [path] -- show QOM composition tree
+info qtree  -- show device tree
+info ramblock  -- Display system ramblock information
+info rdma  -- show RDMA state
+info registers [-a] -- show the cpu registers (-a: all - show register info for all cpus)
+info replay  -- show record/replay information
+info rocker name -- Show rocker switch
+info rocker-of-dpa-flows name [tbl_id] -- Show rocker OF-DPA flow tables
+info rocker-of-dpa-groups name [type] -- Show rocker OF-DPA groups
+info rocker-ports name -- Show rocker ports
+info roms  -- show roms
+info sev  -- show SEV information
+info sgx  -- show intel SGX information
+info snapshots  -- show the currently saved VM snapshots
+info spice  -- show the spice server status
+info status  -- show the current VM status (running|paused)
+info sync-profile [-m] [-n] [max] -- show synchronization profiling info, up to max entries (default: 10), sorted by total wait time. (-m: sort by mean wait time; -n: do not coalesce objects with the same call site)
+info tlb  -- show virtual to physical memory mappings
+info tpm  -- show the TPM device
+info trace-events [name] [vcpu] -- show available trace-events & their state (name: event name pattern; vcpu: vCPU to query, default is any)
+info usb  -- show guest USB devices
+info usbhost  -- show host USB devices
+info usernet  -- show user network stack connection states
+info uuid  -- show the current VM UUID
+info version  -- show the version of QEMU
+info vm-generation-id  -- Show Virtual Machine Generation ID
+info vnc  -- show the vnc server status
+(qemu) info [K[D[D[D[D[Dinfo c[K[D[D[D[D[D[Dinfo cp[K[D[D[D[D[D[D[Dinfo cpu[K[D[D[D[D[D[D[D[Dinfo cpuz[K
+unknown command: 'info cpuz'
+(qemu) info cpuz[K[D[D[D[D[D[D[D[D[Dinfo cpu[K[D[D[D[D[D[D[D[Dinfo cpus[K
+* CPU #0: thread_id=62304
+  CPU #1: thread_id=62305
+  CPU #2: thread_id=62306
+  CPU #3: thread_id=62308
+  CPU #4: thread_id=62309
+  CPU #5: thread_id=62310
+  CPU #6: thread_id=62312
+  CPU #7: thread_id=62313
+(qemu) s[K[Dsy[K[D[Dsys[K[D[D[Dsyst[K[D[D[D[Dsyste[K[D[D[D[D[Dsystem[K[D[D[D[D[D[Dsystem-[K[D[D[D[D[D[D[Dsystem-0[K[D[D[D[D[D[D[D[Dsystem-[K[D[D[D[D[D[D[Dsystem[K[D[D[D[D[D[Dsystem_[K[D[D[D[D[D[D[Dsystem_r[K[D[D[D[D[D[D[D[Dsystem_re[K[D[D[D[D[D[D[D[D[Dsystem_reset [K
+(qemu) q[K[Dqu[K[D[Dqui[K[D[D[Dquit[K
