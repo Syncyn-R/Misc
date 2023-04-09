@@ -18,9 +18,9 @@ record(){
 		sourceurl=`curl -s 'https://api.live.bilibili.com/room/v1/Room/playUrl?cid='$roomid'&qn=10000&platform=web' | jq '.data.durl[0].url' -r`
 		tlog Source url: $sourceurl
 		tlog Start recording: $filename.$outputformat
-		ffmpeg -user_agent 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' -headers 'referer: https://live.bilibili.com/'$roomid -re -i $sourceurl -c copy $filename.$outputformat > $logdir/Record-$filename.log 2>&1
+		ffmpeg -user_agent 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' -headers 'referer: https://live.bilibili.com/'$roomid -i $sourceurl -c copy $filename.$outputformat > $logdir/Record-$filename.log 2>&1
 		returncode=$?
-		[ $returncode -eq 255 ] && exit 0
+		[ $returncode -eq 255 ] && exit 255
 		tlog FFMPEG return $returncode.
 		grep -q 'HTTP error 404 Not Found' $logdir/Record-$filename.log
 		[ $? -eq 0 ] && rm logs/Record-$filename.log && tlog Deleted 404 $logdir/Record-$filename.log
@@ -32,7 +32,7 @@ loop(){
 	while true
 	do
 		$0 record $1 $2
-		[ $? -eq 0 ] && exit 0
+		[ $? -eq 255 ] && exit 0
 	done
 }
 
@@ -69,3 +69,4 @@ case "$1" in
 record) record $2 $3;;
 $1) envcheck $1;;
 esac
+#Xiziya_R
