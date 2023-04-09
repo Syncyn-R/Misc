@@ -1,0 +1,55 @@
+#!ipxe
+
+isset ${timeout} || set timeout 1
+
+:start
+menu iPXE Menu
+item --gap -- -----------Main------------
+item boot Boot${bootfail}
+item --gap -- ----------Install----------
+item installwin1022h2uefi Install Windows 10 22H2 UEFI${installwin1022h2uefifail}
+item installwin1022h2mbr Install Windows 10 22H2 MBR${installwin1022h2mbrfail}
+item installwin7 Install Windows 7${installwin7fail}
+item --gap -- ---------Advanced----------
+item shell Shell${shellfail}
+item --gap -- -----------Power-----------
+item reboot Reboot${rebootfail}
+item shutdown Shutdown${shutdownfail}
+choose --timeout ${timeout} --default boot selected && goto ${selected}
+
+:boot
+isset ${incmd1} || set incmd1 sanboot
+chain --autofree /by-mac/${mac}.lst || chain --autofree failed.lst
+
+:installwin7
+set incmd1 sanhook                                                                            
+set incmd2 sanboot                                                                            
+set inarg1 --drive                                                                            
+set inarg2 0x81
+set inarg3 iscsi:192.168.255.100:::1:install:win7
+goto boot
+
+:installwin1022h2uefi
+set incmd1 sanhook
+set incmd2 sanboot
+set inarg1 --drive
+set inarg2 0x81
+set inarg3 iscsi:192.168.255.100:::1:install:win1022h2uefi
+goto boot
+
+:installwin1022h2mbr
+set incmd1 sanhook
+set incmd2 sanboot
+set inarg1 --drive
+set inarg2 0x81
+set inarg3 iscsi:192.168.255.100:::1:install:win1022h2mbr
+goto boot
+
+:shell
+shell || chain --autofree failed.lst
+
+:reboot
+reboot || chain --autofree failed.lst
+
+:shutdown
+poweroff || chain --autofree failed.lst

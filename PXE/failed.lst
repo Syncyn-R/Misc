@@ -1,0 +1,6 @@
+#!ipxe
+set ${selected}fail (Failed)
+set timeout 0
+sanunhook --drive 0x80
+sanunhook --drive 0x81
+chain menu.lst

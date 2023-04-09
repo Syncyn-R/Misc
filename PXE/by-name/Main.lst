@@ -1,0 +1,3 @@
+#!ipxe
+${incmd1} --drive 0x80 iscsi:192.168.255.101:::1:main:system || chain /failed.lst
+${incmd2} ${inarg1} ${inarg2} ${inarg3} || /failed.lst
