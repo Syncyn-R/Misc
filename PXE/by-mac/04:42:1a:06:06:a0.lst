@@ -1,0 +1,2 @@
+#!ipxe
+chain /by-name/Main.lst

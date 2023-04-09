@@ -1,0 +1,8 @@
+#!ipxe
+set username Work
+set password Work@Home#001
+#kernel http://192.168.255.100:10241/memdisk
+#initrd http://192.168.255.100:10241/MHDD.iso
+#boot memdisk iso raw
+sanboot --drive 0x80 iscsi:192.168.255.125:::1:work:system
+shell
