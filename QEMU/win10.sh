@@ -1,10 +1,11 @@
 #!/bin/bash
 monfile=mon.txt
 pidfile=pid
+qemustdout=QEMU.txt
 monaddr=`grep monitoraddress= qemu.sh | awk -F '=' '{print $2}'`
 monport=`grep monitorport= qemu.sh | awk -F '=' '{print $2}'`
 
-./qemu.sh > qemu.txt 2>&1&
+./qemu.sh > $qemustdout 2>&1&
 
 while true
 do
