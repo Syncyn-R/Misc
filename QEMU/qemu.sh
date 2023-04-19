@@ -5,7 +5,7 @@ ifname=qemu0
 qemu-system-x86_64 -enable-kvm \
 	-name 'Win10' \
 	-M q35 \
-	-cpu host,-hypervisor,-kvm,+topoext \
+	-cpu host,+topoext \
 	-smp sockets=1,cores=12,threads=2 \
 	-m 8192 \
 	-drive if=ide,media=cdrom,id=cdrom0 \
